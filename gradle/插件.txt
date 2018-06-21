@@ -1,0 +1,14 @@
+spring-boot gradle 插件：
+命令行运行：gradle bootRun 若为多级项目 在父级中执行 gradle 项目名称:bootRun
+指定jvm参数：
+bootRun {
+   jvmArgs = ["-Dhttp.proxyHost=xxxxxx", "-Dhttp.proxyPort=xxxxxx"]
+}
+或命令行指定：
+bootRun {
+    if ( project.hasProperty('jvmArgs') ) {
+        jvmArgs = (project.jvmArgs.split("\\s+") as List)
+
+    }
+}
+gradle bootRun -PjvmArgs="-Dwhatever1=value1 -Dwhatever2=value2"

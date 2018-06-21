@@ -1,0 +1,9 @@
+1. 查询镜像
+docker images
+2. 查询容器
+docker ps -a
+3. 先删除容器
+docker rm 34kjkjl
+4. 删除镜像
+docker rmi d98dfg3
+注意：有时需要加上-f参数进行强制删除
